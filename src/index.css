@@ -1,111 +1,78 @@
+@import "tailwindcss";
+
+
+/* Variáveis do css */
+
+/*Light Mode*/
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+   --color-text: #464646;
+  --color-primary: #C0E838;
+  --color-priDark: #92ae35;
+  --color-secondary: #f6eeea;
+  --color-secDark: #ede6e2;
+  --color-tertiary: #f1313e;
+}
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
+/* Adicione isto ao seu arquivo CSS principal */
+@supports (-webkit-touch-callout: none) {
+  .h-screen-ios {
+    /* Define a altura máxima disponível para a viewport no iOS */
+    height: -webkit-fill-available;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+  /*Dark Mode*/ 
+/*Essa api é um recurso do css = indicar se uma determinada Cor/esquema está presente no dispositivo.*/
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+  --color-text: #e9e9e9;
+  --color-primary: #ede6e2;
+  --color-priDark: #f6eeea;
+  --color-secondary: #C0E838;
+  --color-secDark: #92ae35;
+  --color-tertiary: #F1313E;
   }
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+
+/*Para facil utilização das variáveis do css*/
+/* configurar o tema*/
+@theme {
+  --color-text: var(--color-text);
+  --color-primary: var(--color-primary);
+  --color-priDark: var(--color-priDark);
+  --color-secondary: var(--color-secondary);
+  --color-secDark: var(--color-secDark);
+  --color-tertiary: var(--color-tertiary);
 }
 
-body {
-  margin: 0;
+/* Breakpoints */
+
+@theme {
+  /*Ipad Mini*/
+  --breakpoint-md: 767px; /* A partir de 768px x 1024px (iPad Mini) o layout mudará */
+
+  /*Laptop*/
+  --breakpoint-lg: 1025px; /* A partir de 1025 (1024 (Ipad Pro)) o layout mudará */
+
+  /*Ipad Pro*/
+  --breakpoint-2md: 1024px; /* A partir de 1024 (tablet) o layout mudará */
+
+  /*IPad Pro - Paisagem*/
+  --breakpoint-3xl: 1300px; /* A partir de 1920 (laptop) o layout mudará */
+
+  /*4k*/
+  --breakpoint-4k: 2388px; /* A partir de 2388 (iPad Pro 2388px x 1668px) o layout mudará */
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-}
+/*
+Iphone 16 pro - 1170 x 2536 pixels
+ipad Mini - 768 x 1024
+laptop - 1920 x 1080
+iPad Pro: 2388 x 1668 pixels
+4k: 3840 x 2160
+*/
