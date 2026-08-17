@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 //npm install react-router-dom  =  biblioteca de roteamento, Criar rotas e navegar entre elas
 //npm install --save-dev @types/react-router-dom  =  pacote de declaração de tipo
-import { Home } from "./Pages/home.tsx";
+import { Home } from "./Pages/home";
 
 // 💡 Defina o nome do seu repositório aqui
 const REPO_NAME = "agencydreams-co";
