@@ -15,7 +15,7 @@ import video3 from "../assets/v3.mp4";
 import videoBanner from "../assets/v5.mp4";
 
 // Imagens de Projetos
-import project1 from "../assets/p1.png";
+import project1 from "../assets/p1.jpg";
 import project2 from "../assets/p2.jpg";
 import project3 from "../assets/p3.jpg";
 import project4 from "../assets/p4.jpg";
